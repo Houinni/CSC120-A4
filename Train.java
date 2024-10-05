@@ -29,14 +29,15 @@ public class Train {
         }
     }
     /**
+     * 
      * Returns the engine of the train.
-     *
      * @return the engine object
      */
     public Engine getEngine() {
         return engine;
     }
     /**
+     * 
      * Returns the car at the specified index.
      *
      * @param i the index of the car to retrieve
@@ -44,7 +45,7 @@ public class Train {
      * @throws IndexOutOfBoundsException if the index is out of range
      */
     public Car getCar(int i) {
-        if (i >= 0 && i < train.size()) {
+        if (i>=0 && i<train.size()) {
             return train.get(i);
         } 
         else {
@@ -52,8 +53,7 @@ public class Train {
         }
     }
     /**
-     * Calculates and returns the maximum passenger capacity of the train.
-     *
+     * 
      * @return the total passenger capacity of all cars
      */
     public int getMaxCapacity() {
@@ -64,8 +64,7 @@ public class Train {
         return totalCapacity;
     }
     /**
-     * Calculates and returns the total number of seats remaining across all cars.
-     *
+     * 
      * @return the total number of available seats
      */
     public int seatsRemaining() {
@@ -75,6 +74,7 @@ public class Train {
         }
         return remainingSeats;
     }
+
     /**
      * Prints the passenger manifest for each car that has passengers.
      */
@@ -92,5 +92,5 @@ public class Train {
 
     }
 
-   
+
 }

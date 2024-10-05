@@ -1,4 +1,6 @@
 Use this file to record your reflection on this assignment.
 
-- What are your initial impressions of how `Encapsulation` affects your programming? It's very useful and has practical use.
-- What worked, what didn't, what advice would you give someone taking this course in the future? The maximum fuel capacity was abit confusing for me, I'm not sure whether I should include them in instructor.
+- What are your initial impressions of how `Encapsulation` affects your programming? It mainly focuses on data protection, navigating the visibility of attributes. Through practive, I'm gradually understood the difference between having a public attribute and have a 'getter' to access the attribute. The latter is safer for it doesn't allow others to modify this value. Therefore for methods that change value, we should consider whether it should be public or private. 
+But I'm still trying to figure out how to use "static" and "final" properly. Plus, when dealing with engine class, I'm still not sure whether 'refuel' method should be public or private. I think both makes sense, but ultimately I settled on 'private'. Also I was wondering do we need to add a 'stop' method in engine class to stop decreasing fuel level? Lastly, why do we need a onBoard method in passenger class? if we take in addPassenger from Car class, that 'addPassenger' need to be public, if it's private, Passenger class won't be able to access it as well.
+- What worked, what didn't, what advice would you give someone taking this course in the future? 
+I think most of my code works, but there might possibly have bugs I just didn't detect. To future participants, my advice is take the majority of time to think about what attributes and methods need to be private.

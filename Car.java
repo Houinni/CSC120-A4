@@ -1,27 +1,43 @@
 import java.util.ArrayList;
-
+/**
+ * The {@code Car} class represents a car composed of an arraylist keeping track of passengers
+ * and a number tracking the capacity of the car
+ * It provides methods to access the passenger list, the capacity, and remaining seats
+ * as well as adding & removing passengers from the car
+ * finally a method that prints manifest
+ */
 public class Car {
 
     private ArrayList<Passenger> passengers;
     private int maxCapacity;
-
+    /**
+     * 
+     * @param maxCapacity constructor of car
+     */
     public Car(int maxCapacity){
         this.maxCapacity=maxCapacity;
         passengers=new ArrayList<>();
     }
-
+    /**
+     * 
+     * @return the car's capacity
+     */
     public int getCapacity(){
         return maxCapacity;
     }
 
-    public ArrayList<Passenger> getPassengers() {
-        return passengers;
-    }
-
+    /**
+     * 
+     * @return remaining seats
+     */
     public int seatsRemaining(){
         return maxCapacity-passengers.size();
     }
-
+    /**
+     * 
+     * take in @param p
+     * @return true or false for whether a passenger is successfully added
+     */
     public boolean addPassenger(Passenger p){
         if(passengers.size()<maxCapacity){
             if(!passengers.contains(p)){
@@ -32,7 +48,11 @@ public class Car {
         }
         return false;
     }
-
+    /**
+     * 
+     * take in @param p
+     * @return true or false for whether a passenger is successfully removed
+     */
     public boolean removePassenger(Passenger p){
         if(this.passengers.contains(p)){
             passengers.remove(p);
@@ -40,6 +60,10 @@ public class Car {
         }
         return false; 
     }
+
+    /**
+     * print all passengers in the car
+     */
     public void printManifest(){
         if(passengers.size()==0){
             System.out.println("This car is EMPTY.");
@@ -52,45 +76,5 @@ public class Car {
         }
     }
 
-    public static void main(String[] args) {
-        // Create Car objects with different capacities
-        Car car1 = new Car(2); // Car with capacity for 2 passengers
-        Car car2 = new Car(3); // Car with capacity for 3 passengers
-
-        // Create Passenger objects
-        Passenger passenger1 = new Passenger("Alice");
-        Passenger passenger2 = new Passenger("Bob");
-        Passenger passenger3 = new Passenger("Charlie");
-        Passenger passenger4 = new Passenger("Diana");
-
-        // Test adding passengers to car1
-        System.out.println("Adding passengers to car1:");
-        System.out.println("Add Alice to car1: " + car1.addPassenger(passenger1)); // Should return true
-        System.out.println("Add Bob to car1: " + car1.addPassenger(passenger2));   // Should return true
-        System.out.println("Add Charlie to car1: " + car1.addPassenger(passenger3)); // Should return false (car1 is full)
-
-        // Test adding passengers to car2
-        System.out.println("\nAdding passengers to car2:");
-        System.out.println("Add Charlie to car2: " + car2.addPassenger(passenger3)); // Should return true
-        System.out.println("Add Diana to car2: " + car2.addPassenger(passenger4));   // Should return true
-
-        // Print manifests
-        System.out.println("\nCar1 Manifest:");
-        car1.printManifest();
-
-        System.out.println("\nCar2 Manifest:");
-        car2.printManifest();
-
-        // Test removing a passenger
-        System.out.println("\nRemoving Bob from car1:");
-        System.out.println("Remove Bob from car1: " + car1.removePassenger(passenger2)); // Should return true
-
-        // Print updated manifest for car1
-        System.out.println("\nUpdated Car1 Manifest:");
-        car1.printManifest();
-
-        // Check seats remaining
-        System.out.println("\nSeats remaining in car1: " + car1.seatsRemaining()); // Should be 1
-        System.out.println("Seats remaining in car2: " + car2.seatsRemaining()); 
-    }
+    
 }
