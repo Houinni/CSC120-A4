@@ -10,34 +10,39 @@ public class Car {
 
     private ArrayList<Passenger> passengers;
     private int maxCapacity;
-    /**
-     * 
-     * @param maxCapacity constructor of car
-     */
+/**
+ * Constructs a car object with the specified maximum capacity.
+ *
+ * @param maxCapacity the maximum number of passengers the car can hold
+ */
     public Car(int maxCapacity){
         this.maxCapacity=maxCapacity;
-        passengers=new ArrayList<>();
+        this.passengers=new ArrayList<>();
     }
-    /**
-     * 
-     * @return the car's capacity
-     */
+/**
+ * Returns the maximum seating capacity of the car.
+ *
+ * @return the car's total capacity
+ */
     public int getCapacity(){
         return maxCapacity;
     }
-
-    /**
-     * 
-     * @return remaining seats
-     */
+/**
+ * Returns the number of available seats in the car.
+ *
+ * @return the number of seats remaining
+ */
     public int seatsRemaining(){
         return maxCapacity-passengers.size();
     }
-    /**
-     * 
-     * take in @param p
-     * @return true or false for whether a passenger is successfully added
-     */
+/**
+ * Adds a passenger to the car if there is available seating and the passenger 
+ * is not already in the car.
+ *
+ * @param p the passenger to be added
+ * @return {@code true} if the passenger was successfully added, 
+ *         {@code false} otherwise
+ */
     public boolean addPassenger(Passenger p){
         if(passengers.size()<maxCapacity){
             if(!passengers.contains(p)){
@@ -48,11 +53,13 @@ public class Car {
         }
         return false;
     }
-    /**
-     * 
-     * take in @param p
-     * @return true or false for whether a passenger is successfully removed
-     */
+/**
+ * Removes a passenger from the car if the passenger is currently in the car.
+ *
+ * @param p the passenger to be removed
+ * @return {@code true} if the passenger was successfully removed, 
+ *         {@code false} otherwise
+ */
     public boolean removePassenger(Passenger p){
         if(this.passengers.contains(p)){
             passengers.remove(p);
@@ -60,16 +67,14 @@ public class Car {
         }
         return false; 
     }
-
-    /**
-     * print all passengers in the car
-     */
+/**
+ * Prints the names of all passengers currently in the car.
+ * If the car is empty, it prints a message indicating that the car is empty.
+ */
     public void printManifest(){
         if(passengers.size()==0){
             System.out.println("This car is EMPTY.");
-        }
-        else {
-            
+        }else {
             for (Passenger p:passengers){
                 System.out.println(p.getName());
             }

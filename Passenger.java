@@ -10,15 +10,28 @@
 public class Passenger {
     
     private String name;
-    
+/**
+ * Constructs a Passenger object with the specified name.
+ *
+ * @param name the name of the passenger
+ */
     public Passenger(String name) {
         this.name = name;
     }
-
+/**
+ * Retrieves the name of the passenger.
+ *
+ * @return the name of the passenger
+ */
     public String getName(){
         return this.name;
     }
-
+/**
+ * Attempts to board the specified car. 
+ * Prints a message indicating whether boarding was successful.
+ *
+ * @param c the car to board
+ */
     public void boardCar(Car c) {
         if (c.addPassenger(this)) {
             System.out.println(name + " has boarded the car.");
@@ -26,7 +39,12 @@ public class Passenger {
             System.out.println(name + " could not board the car.");
         }
     }
-
+/**
+ * Attempts to get off the specified car.
+ * Prints a message indicating whether getting off was successful.
+ *
+ * @param c the car to get off
+ */
     public void getOffCar(Car c) {
         if (c.removePassenger(this)) {
             System.out.println(name + " has gotten off the car.");

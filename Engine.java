@@ -6,20 +6,18 @@ public class Engine {
 
     private FuelType fuelType;
     private double fuelLevel;
-    private double Maximun;
+    private double maximun;
 
      /**
      * Constructs a new {@code Engine} 
      *
      * @param fuelType          the type of fuel used by the engine
      * @param Maximum           the fuel capacity of the engine
-     * @param fuelLevel         the current fuel level of the engine
      */
-    public Engine(FuelType fuelType, double Maximun){
+    public Engine(FuelType fuelType, double maximun){
         this.fuelType=fuelType;
-        this.Maximun=Maximun;
-        this.fuelLevel=this.Maximun;
-        
+        this.maximun=maximun;
+        this.fuelLevel=this.maximun;
     }
 
     /**
@@ -40,14 +38,14 @@ public class Engine {
      * @return the maximum fuel level of the engine
      */
     public double getMaxFuelLevel() {
-        return Maximun;
+        return maximun;
     }
 
     /**
      * set current fuel level to maximum level
      */
     private void refuel(){
-        this.fuelLevel=Maximun;
+        this.fuelLevel=maximun;
     }
 
     /**
